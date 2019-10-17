@@ -4,7 +4,6 @@
 package nl.schiphol.jaxb;
 
 import javax.xml.bind.*;
-import nl.schiphol.publicflights.commons.util.*;
 import org.slf4j.*;
 
 class JAXBUtilityValidationEventHandler implements ValidationEventHandler {
@@ -13,19 +12,23 @@ class JAXBUtilityValidationEventHandler implements ValidationEventHandler {
       LoggerFactory.getLogger(JAXBUtilityValidationEventHandler.class);
 
   public boolean handleEvent(ValidationEvent event) {
-    ToStringBuilder builder = new ToStringBuilder(this);
+    StringBuilder builder = new StringBuilder().append(this.toString());
 
     builder
-        .append("message", event.getMessage()) //
-        .append("lineNumber", event.getLocator().getLineNumber()) //
-        .append("columnNumber", event.getLocator().getColumnNumber()) //
-        .append("object", event.getLocator().getObject());
+        .append("message")
+        .append(event.getMessage()) //
+        .append("lineNumber")
+        .append(event.getLocator().getLineNumber()) //
+        .append("columnNumber")
+        .append(event.getLocator().getColumnNumber()) //
+        .append("object")
+        .append(event.getLocator().getObject());
 
-    boolean proceed = (event.getSeverity() == ValidationEvent.WARNING);
+    boolean proceed = false;
     if (proceed) {
-      LOG.warn(builder.build());
+      LOG.warn(builder.toString());
     } else {
-      LOG.error(builder.build());
+      LOG.error(builder.toString());
     }
     return proceed;
   }
