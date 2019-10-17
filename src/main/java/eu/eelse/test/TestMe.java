@@ -26,7 +26,6 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-/** Utility class for JAXB. */
 public class TestMe {
 
   public static final String NAMESPACE_PREFIX_MAPPER_PROPERTY =
@@ -68,7 +67,7 @@ public class TestMe {
 
   /**
    * Utility method for unmarshalling XML to any given type. Schema parameter is optional, used for
-   * validation of the XML input. StAX is used for reading the input stream, this is proven to be xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxx x xx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x xxxxxxxx
+   * validation of the XML input. StAX is used for reading the input stream, this is proven to be xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxx x xx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x xxxxxxxx
    * the fastest approach.
    *
    * @param inputStream InputStream containing the XML to be unmarshalled
