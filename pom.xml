@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>eu.eelse.test</groupId>
+    <artifactId>cosium-test</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <!-- Adds a git pre-commit hook to your local checkout so all modified java files are properly
+               formatted according to google java style when committing to git
+               Ref. https://github.com/Cosium/maven-git-code-format -->
+                <groupId>com.cosium.code</groupId>
+                <artifactId>maven-git-code-format</artifactId>
+                <version>1.32</version>
+                <executions>
+                    <execution>
+                        <id>install-format-hook</id>
+                        <goals>
+                            <goal>install-hooks</goal>
+                        </goals>
+                        <configuration>
+                            <propertiesToAdd>-X</propertiesToAdd>
+                            <truncateHooksBaseScripts>true</truncateHooksBaseScripts>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
