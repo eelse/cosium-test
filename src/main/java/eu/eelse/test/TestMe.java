@@ -1,5 +1,4 @@
-/** Copyright (c) 2015 Schiphol Group */
-package nl.schiphol.jaxb;
+package eu.eelse.test;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -28,7 +27,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 /** Utility class for JAXB. */
-public class JAXBUtility {
+public class TestMe {
 
   public static final String NAMESPACE_PREFIX_MAPPER_PROPERTY =
       "com.sun.xml.bind.namespacePrefixMapper";
@@ -68,7 +67,7 @@ public class JAXBUtility {
 
   /**
    * Utility method for unmarshalling XML to any given type. Schema parameter is optional, used for
-   * validation of the XML input. StAX is used for reading the input stream, this is proven to be xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   * validation of the XML input. StAX is used for reading the input stream, this is proven to be xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxx x xx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x xxxxxxxx
    * the fastest approach.
    *
    * @param inputStream InputStream containing the XML to be unmarshalled
