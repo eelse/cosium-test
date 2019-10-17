@@ -67,7 +67,7 @@ public class TestMe {
 
   /**
    * Utility method for unmarshalling XML to any given type. Schema parameter is optional, used for
-   * validation of the XML input. StAX is used for reading the input stream, this is proven to be xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxx x xx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x xxxxxxxx
+   * validation of the XML input. StAX is used for reading the input stream, this is proven to be xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxx x xx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x xxxxxxxx
    * the fastest approach.
    *
    * @param inputStream InputStream containing the XML to be unmarshalled
@@ -238,8 +238,6 @@ public class TestMe {
     Source source = new StreamSource(inputStream, null);
     Schema schema = schemaFactory.newSchema(source);
     unmarshaller.setSchema(schema);
-    JAXBUtilityValidationEventHandler eventHandler = new JAXBUtilityValidationEventHandler();
-    unmarshaller.setEventHandler(eventHandler);
   }
 
   /**
@@ -321,7 +319,7 @@ public class TestMe {
     }
     Unmarshaller unmarshaller = getUnmarshaller(clazz);
     if (stripNamespace) {
-      JAXBUtility.stripDefaultNamespace(node);
+      stripDefaultNamespace(node);
     }
     return (T) unmarshaller.unmarshal(node, clazz).getValue();
   }
